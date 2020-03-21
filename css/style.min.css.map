@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AAEA,KACI,kBAHW,CAEf,QAIQ,mBAAoB,CACvB,EAGD,uCAAY,CAAZ,+BAAgC,CACnC,GAEG,WAAY","file":"style.min.css","sourcesContent":["$color: #3aeb12;\n\nbody {\n    background: $color;\n\n    h1 {\n        font-weight: lighter;\n    }\n}\na {\n    transition: all 0.5s ease-in-out;\n}\nh1 {\n    color: white;\n}"]}
