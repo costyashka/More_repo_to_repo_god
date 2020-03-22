@@ -12,13 +12,15 @@ function Sync(done) {
         srever: {
             baseDir: "./"
         },
-        port: 3000,
-        serveStatic: [".","./css"]
+        host: 'localhost',
+        port: 9000,
+        serveStatic: ["."],
     });
-
+    gulp.watch('./*.html').on("change",browserSync.reload);
+    gulp.watch('./scss/*.scss').on('change',css_style);
     done();
 }
-function css_style(done) {
+function css_style() {
     gulp.src("./scss/**/*.scss")
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -31,9 +33,10 @@ function css_style(done) {
     }))
     .pipe(rename({suffix: ".min"}))
     .pipe(sourcemaps.write('/'))
-    .pipe(gulp.dest("./css/"));
+    .pipe(gulp.dest("./css/"))
+    .pipe(browserSync.stream());
 
-    done();
+    
 }
 
 function watchSass(){
@@ -45,7 +48,10 @@ function print(done){
     done();
 }
 
-gulp.task("default",gulp.series(print,watchSass));
 gulp.task(Sync);
+gulp.task(css_style);
+gulp.task("default",Sync);
+
+
 //gulp.task(print);
 //gulp.task(css_style);

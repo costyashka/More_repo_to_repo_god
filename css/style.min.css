@@ -1,3 +1,3 @@
-body{background:#ffffff}body h1{font-weight:lighter}a{-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out}h1{color:white}
+body{background:#ffecb7}body h1{font-weight:lighter}a{-webkit-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out}h1{color:white}.block:not(.first){background:#acacac;height:300px;width:100px;margin-bottom:20px;border:4px solid yellow}.block{background:#acacac;height:100px;width:100%;margin-bottom:40px;border:2px solid white}
 
 /*# sourceMappingURL=style.min.css.map */
