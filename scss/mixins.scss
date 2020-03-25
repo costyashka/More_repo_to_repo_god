@@ -1,0 +1,54 @@
+@mixin btn-grad($color1: #c31432,$color2:#240b36)
+{
+    font-size: 1.5em;
+    color: #fff;
+    background: linear-gradient(to right,$color1,$color2,$color1);
+    text-decoration: none;
+    padding: 20px 70px;
+    border-radius: 10px;
+    background-size:200%;
+    transition: 1s;
+    &:hover{
+        background-position: right;
+    }
+}
+@mixin closer($duration-time,$closing-time){
+    animation-name: closer;
+    animation-delay: 4s;
+    animation-duration: 1s;
+    @keyframes closer {
+        from {opacity: 1;}
+        to {opacity: 0;}        
+    }
+}
+@mixin checkbox{
+    input[type="checkbox"] {
+        position: relative;
+        width: 80px;
+        height: 30px;
+        appearance: none;
+        outline: none;
+        background: #636363;
+        border-radius: 20px;
+        transition: .5s;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            transform: scale(1.1);
+            border-radius: 50%;
+            background: #d1d1d1;
+            top:-5px;
+            left: 0;
+            transition: .5s;
+        }
+    }
+    input:checked[type="checkbox"]{
+        background: #3a5070;
+        &:before{
+            left:40px;
+            background: #5386d4;
+        }
+    }
+}

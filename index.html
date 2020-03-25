@@ -6,16 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Gulp-project</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/closer.js"></script>
+    <script>
+        setTimeout(function(){
+            $.getScript("js/closer.js");
+        },5000)
+    </script>
     
 </head>
 <body>
-    <script id="__bs_script__">//<![CDATA[
-        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
-    //]]></script>
-    <h1>UWU</h1>
-    <a>Click on me!</a>
-    <div class="block first">123333123</div>
-    <div class="block">222222</div>
-    <div class="block">88005553535</div>
+    <div class = "preloader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="block first">
+        <div class="block">222222</div>
+        <a class = "nice">WOw</a>
+        <div class = "gradborder"><span>1</span></div>
+        <div class = "switch">
+            <input type="checkbox">
+        </div>
+    </div>
 </body>
 </html>

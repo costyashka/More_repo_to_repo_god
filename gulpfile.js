@@ -12,7 +12,7 @@ function Sync(done) {
         srever: {
             baseDir: "./"
         },
-        host: 'localhost',
+        host: '80.95.44.75',
         port: 9000,
         serveStatic: ["."],
     });
@@ -21,7 +21,7 @@ function Sync(done) {
     done();
 }
 function css_style() {
-    gulp.src("./scss/**/*.scss")
+    gulp.src("./scss/style.scss")
     .pipe(sourcemaps.init())
     .pipe(sass({
         errorLogToConsole: true,
