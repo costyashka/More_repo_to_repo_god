@@ -1,15 +1,45 @@
 @import "variables";
 @import "mixins";
 
-
+html{
+    height: 100%;
+    overflow: hidden;
+}
 body {
     background: $color;
-    width: 90%;
-    height: 100%;
-    padding: 50px 50px;
+    margin: 0;
+    padding: 0;
+    perspective: 2px;
+    transform-style: preserve-3d;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .wrapper {
+    height: 100vw;
+    padding: 15px;
+    box-sizing: border-box;
+    min-height: 100vh;
+    transform-style: inherit;
+    width: 100vw;
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        transform-origin: center;
+        min-height: 100vh;
+        background-image: url($image-paralax);
+        background-repeat: repeat-y;
+        border-style: cover;
+
+        transform: translateZ(-2px) scale(3);
+    }
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
@@ -19,11 +49,11 @@ body {
         justify-content: center;
         align-items: center;
         padding: 1em;
-        background-color: #fff;
+        background-color: rgba($color: #ccf, $alpha: .7);
         border: 1px solid #201e34;
     }
     div.light{
-        background-color: #cccccc;
+        background-color: rgba($color: #ccf, $alpha: .7);
     }
 }
 .preloader{
