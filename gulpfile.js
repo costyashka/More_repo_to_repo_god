@@ -12,7 +12,7 @@ function Sync(done) {
         srever: {
             baseDir: "./"
         },
-        host: '80.95.44.75',
+        host: 'localhost',
         port: 9000,
         serveStatic: ["."],
     });

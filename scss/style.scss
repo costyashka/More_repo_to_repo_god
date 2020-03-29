@@ -4,41 +4,27 @@
 
 body {
     background: $color;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-
-}
-h1 {
-    color: orangered;
-}
-
-.block:not(.first){
-    background: $blockColor;
-    height: 300px;
-    width: 100px;
-    margin-bottom: 20px;
-    border: 2px solid magenta;
-}
-
-.block {
-    background: $blockColor;
+    width: 90%;
     height: 100%;
-    width: 100%;
-    margin-bottom: 40px;
-    margin-right: 20px;
-    margin-left: 20px;
-    display: flex;
-    border: 2px solid white;
-    justify-content: center;
-    align-items: center;
-    &:hover{
-        border: 2px solid black;
-    }
-
+    padding: 50px 50px;
 }
-.nice{
-    @include btn-grad(#009FFF,#ec2F4B);
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+        background-color: #fff;
+        border: 1px solid #201e34;
+    }
+    div.light{
+        background-color: #cccccc;
+    }
 }
 .preloader{
     position: absolute;
@@ -106,6 +92,7 @@ h1 {
     
 }
 .gradborder{
+    grid-column: 1/3;
     z-index: 2;
     width: 100px;
     height: 100px;
@@ -149,8 +136,84 @@ h1 {
 }
 .switch{
     position: absolute;
-    top: 60%;
-    left: 50%;
+    left: 15%;
     transform: translate(-50%,-50%);
     @include checkbox;
+}
+.cut{
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+.nice{
+    @include btn-grad;
+}
+.socia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+        .link{
+            svg{
+                width: 120px;
+                height: 150px;
+            }
+            path{
+                fill: $social-blue;
+                stroke: $social-pink;
+                stroke-dasharray: 1920;
+                stroke-dashoffset: 0;
+                stroke-width: 15px;
+            }
+            &:hover{
+                path{
+                    animation: vk .7s linear forwards;
+                    @keyframes vk {
+                        0% {
+                            stroke-dashoffset: 0;
+                        }
+                        40% {
+                            stroke-dashoffset: 1920;
+                            color: $social-blue;
+                        }
+                        80% {
+                            stroke-dashoffset: 3840;
+                            fill: $social-blue;
+                        }
+                        100%{
+                            stroke-dashoffset: 3840;
+                            stroke: $social-pink;
+                            fill: $social-pink;
+
+                        }
+                    }
+                }
+            }
+        }
+}
+.grad-link-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    width: 75px;
+    height: 75px;
+    background: linear-gradient(-45deg,#6de063 70%,#fff 30%);
+    background-size: 700%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    transition: .5s;
+    a{
+        color: #6de063;
+        text-decoration: none;
+        font-size: 40px;
+        transition: .5s;
+    }
+    &:hover{
+        background-position: 40% 40%;
+        a{
+            color: #fff;
+        }
+    }
 }
